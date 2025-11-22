@@ -14,6 +14,17 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import { OrderCheckout } from "./OrderCheckout";
+import mixedNutsImg from 'figma:asset/667faa2759baa14541b285312072698c37280839.png';
+import sansRivalImg from 'figma:asset/300dbf31a3e246cdba8ac95629593dc35aba2941.png';
+import silvanasImg from 'figma:asset/b97fd8903f3235a0f61844fd90901b2319a428c0.png';
+import sansRivalRoundImg from 'figma:asset/d02494cdfb7b99826ad5392b9128acea8c09687b.png';
+import sansRivalSliceImg from 'figma:asset/5dd6fac76a1a8278ff8ed91892033f736be91259.png';
+import sansRivalPistachioImg from 'figma:asset/dac2d68f29e2acdf2d0ac92b44db5001cc5fac82.png';
+import almondSansRivalMiniImg from 'figma:asset/ed2ecc9011be4b4861de2bc45803a366384816af.png';
+import almondSansRivalRoundImg from 'figma:asset/6d0c24d84111e8cd3439e6af166bb7117c22846f.png';
+import chocoHazelnutSansRivalImg from 'figma:asset/5ce6033d9abc5286ef99b8b7cddec0f142bc818e.png';
+import caramelBitesImg from 'figma:asset/7f95bedb8e57a566246a39c1de7bd8eb1859fce0.png';
+import ensaymadaButtertoastImg from 'figma:asset/7243b387855c2d53a5a63518070b2f13b73a1c58.png';
 
 export interface MenuItem {
   id: string;
@@ -79,51 +90,99 @@ const menuItems: MenuItem[] = [
   },
   {
     id: "7",
-    name: "Croissant",
-    description: "Buttery, flaky French pastry",
-    price: 120,
+    name: "Classic Cashew Sans Rival (Mini)",
+    description: "Classic layered cashew meringue cake",
+    price: 95,
     category: "food",
-    image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400"
+    image: sansRivalImg
   },
   {
     id: "8",
-    name: "Blueberry Muffin",
-    description: "Fresh baked with plump blueberries",
-    price: 130,
+    name: "Classic Cashew Sans Rival (Solo)",
+    description: "Individual serving of classic sans rival",
+    price: 230,
     category: "food",
-    image: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=400"
+    image: sansRivalSliceImg
   },
   {
     id: "9",
-    name: "Avocado Toast",
-    description: "Smashed avocado on sourdough",
-    price: 280,
+    name: "Classic Cashew Sans Rival (8\" Round)",
+    description: "Full-sized round cashew sans rival cake",
+    price: 840,
     category: "food",
-    image: "https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=400"
+    image: sansRivalRoundImg
   },
   {
     id: "10",
-    name: "Bagel & Cream Cheese",
-    description: "Fresh bagel with cream cheese",
-    price: 150,
+    name: "Pistachio Sans Rival (Solo)",
+    description: "Luxurious pistachio meringue layers",
+    price: 270,
     category: "food",
-    image: "https://images.unsplash.com/photo-1612224736169-2850b2e11aa0?w=400"
+    image: sansRivalPistachioImg
   },
   {
     id: "11",
-    name: "Chocolate Chip Cookie",
-    description: "Warm and gooey homemade cookie",
-    price: 85,
+    name: "Silvanas (Box of 10)",
+    description: "Frozen buttercream cookie sandwiches",
+    price: 380,
     category: "food",
-    image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400"
+    image: silvanasImg
   },
   {
     id: "12",
-    name: "Greek Yogurt Parfait",
-    description: "Yogurt, granola, and fresh berries",
-    price: 220,
+    name: "Mixed Nuts (200g)",
+    description: "Premium mixed nuts",
+    price: 200,
     category: "food",
-    image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400"
+    image: mixedNutsImg
+  },
+  {
+    id: "13",
+    name: "Classic Ensaymada",
+    description: "Filipino brioche with butter and sugar",
+    price: 55,
+    category: "food",
+    image: ensaymadaButtertoastImg
+  },
+  {
+    id: "14",
+    name: "Original Caramel Bites (200g)",
+    description: "Sweet and chewy caramel treats",
+    price: 105,
+    category: "food",
+    image: caramelBitesImg
+  },
+  {
+    id: "15",
+    name: "Buttertoast",
+    description: "Crispy toasted bread with butter",
+    price: 65,
+    category: "food",
+    image: ensaymadaButtertoastImg
+  },
+  {
+    id: "16",
+    name: "Almond Sans Rival (Mini)",
+    description: "Almond meringue layers",
+    price: 100,
+    category: "food",
+    image: almondSansRivalMiniImg
+  },
+  {
+    id: "17",
+    name: "Almond Sans Rival (8\" Round)",
+    description: "Full-sized round almond sans rival cake",
+    price: 900,
+    category: "food",
+    image: almondSansRivalRoundImg
+  },
+  {
+    id: "18",
+    name: "Chocolate Hazelnut Sans Rival (Solo)",
+    description: "Chocolate and hazelnut meringue layers",
+    price: 300,
+    category: "food",
+    image: chocoHazelnutSansRivalImg
   },
 ];
 
@@ -278,8 +337,8 @@ export function Order() {
               {menuItems.filter(item => item.category === "coffee").map(item => (
                 <Card key={item.id} className="overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="relative h-48">
-                    <ImageWithFallback
-                      src={item.image || ""}
+                    <img
+                      src={typeof item.image === 'string' ? item.image : item.image}
                       alt={item.name}
                       className="w-full h-full object-cover"
                     />
@@ -312,8 +371,8 @@ export function Order() {
               {menuItems.filter(item => item.category === "food").map(item => (
                 <Card key={item.id} className="overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="relative h-48">
-                    <ImageWithFallback
-                      src={item.image || ""}
+                    <img
+                      src={typeof item.image === 'string' ? item.image : item.image}
                       alt={item.name}
                       className="w-full h-full object-cover"
                     />

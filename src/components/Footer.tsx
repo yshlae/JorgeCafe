@@ -28,10 +28,10 @@ export function Footer() {
           <div>
             <h3 className="mb-4">Follow Us</h3>
             <div className="flex gap-4">
-              <a href="#" className="text-slate-300 hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/jorgescafe.batangas/" className="text-slate-300 hover:text-primary transition-colors">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-slate-300 hover:text-primary transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61578234672450" className="text-slate-300 hover:text-primary transition-colors">
                 <Facebook className="w-6 h-6" />
               </a>
               <a href="#" className="text-slate-300 hover:text-primary transition-colors">

@@ -22,10 +22,11 @@ export function About() {
             </p>
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-            <img
-              src={storyImage}
-              alt="Jorge's Casa de Sans Rival exterior"
-              className="w-full h-full object-cover"
+            <iframe
+              src="https://drive.google.com/file/d/1A67g7HMdkyGTAP8UR0OhPbdyJfacj7an/preview"
+              className="w-full h-full"
+              allow="autoplay"
+              title="Jorge's Cafe Video"
             />
           </div>
         </div>
